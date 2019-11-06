@@ -1,0 +1,22 @@
+<div class="container">
+  <h1><%= @restaurant.name %></h1>
+  <p> <%= @restaurant.category %></p>
+  <p> <%= @restaurant.address %></p>
+  <p> <%= @restaurant.phone_number %></p>
+  <p> <%= @restaurant.description %></p>
+
+  <%= link_to 'Leave a comment!', new_restaurant_review_path(@restaurant) %>
+
+<div class="reviews">
+<h3>Reviews</h3>
+  <% @restaurant.reviews.each do |review| %>
+  <div class="comments bg-light">  
+    <p><%= review.content %></p>
+    <p><%= review.rating %></p>
+  </div>
+  <% end %>
+</div>
+
+
+  <%= link_to 'Go back bitch', restaurants_path %>
+</div>

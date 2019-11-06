@@ -1,0 +1,10 @@
+
+  <div class="review">
+    <h3>How was your experience? Leave a comment!</h3>
+      <%= simple_form_for [@restaurant, @review] do |f| %>
+        <%= f.input :content, label: 'Comments' %>
+        <%= f.input :rating, label: 'Rating', collection: %w{0 1 2 3 4 5}  %>
+        <%= f.button :submit %>
+  <% end %>
+  <%= link_to 'Go back', restaurants_path %>
+  </div>
